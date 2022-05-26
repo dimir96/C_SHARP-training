@@ -6,6 +6,6 @@
 Console.Write("Введите трехначное число: ");
 
 int number = Convert.ToInt32(Console.ReadLine());
-    int answer = (number %100)%10;
+    int answer = (number %10);
     Console.WriteLine("Последнее число: " + answer);
 
