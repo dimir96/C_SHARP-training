@@ -5,7 +5,7 @@
 
 Console.Write("Введите трехначное число: ");
 
-string number = Console.ReadLine();
-    int answer = number.Last()- '0';
+int number = Convert.ToInt32(Console.ReadLine());
+    int answer = (number %100)%10;
     Console.WriteLine("Последнее число: " + answer);
 
