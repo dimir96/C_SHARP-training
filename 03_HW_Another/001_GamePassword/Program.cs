@@ -1,48 +1,45 @@
-Console.Clear();
+п»їConsole.Clear();
 
-// В переменной string есть секретное сообщение, 
-// во второй есть пароль. Пользователю программы даётся 3 попытки 
-// ввести пароль и увидеть секретное сообщение.
+// Р’ РїРµСЂРµРјРµРЅРЅРѕР№ string РµСЃС‚СЊ СЃРµРєСЂРµС‚РЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ, 
+// РІРѕ РІС‚РѕСЂРѕР№ РµСЃС‚СЊ РїР°СЂРѕР»СЊ. РџРѕР»СЊР·РѕРІР°С‚РµР»СЋ РїСЂРѕРіСЂР°РјРјС‹ РґР°С‘С‚СЃСЏ 3 РїРѕРїС‹С‚РєРё 
+// РІРІРµСЃС‚Рё РїР°СЂРѕР»СЊ Рё СѓРІРёРґРµС‚СЊ СЃРµРєСЂРµС‚РЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ.
 
-string sicretMassage = "Ты большой молодец, теперь ты знаешь мой год рождения :)";
+string sicretMassage = "РўС‹ Р±РѕР»СЊС€РѕР№ РјРѕР»РѕРґРµС†, С‚РµРїРµСЂСЊ С‚С‹ Р·РЅР°РµС€СЊ РјРѕР№ РіРѕРґ СЂРѕР¶РґРµРЅРёСЏ :)";
 string password = "1996";
-
-bool Answer(string gess, string answer)
-{
-    if(gess==answer) return true;
-    return false;
-}
-
-string Help(int i)
-{
-    if (i==1) return "Подсказка: Это год моего рождения";
-    if (i==2) return "Подсказка: Последняя цифра пароля это 6";
-    return String.Empty;
-
-}
-
-Console.WriteLine("Сыграем в игру: отгадай пароль и увидешь секретное сообщение");
+Console.WriteLine("РЎС‹РіСЂР°РµРј РІ РёРіСЂСѓ: РѕС‚РіР°РґР°Р№ РїР°СЂРѕР»СЊ Рё СѓРІРёРґРµС€СЊ СЃРµРєСЂРµС‚РЅРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ");
 Console.WriteLine();
 int index = 1;
 
 while(index<=3)
 {
-    Console.Write($"{index} попытка! Введи пароль: ");
+    Console.Write($"{index} РїРѕРїС‹С‚РєР°! Р’РІРµРґРё РїР°СЂРѕР»СЊ: ");
     string gessPassword =  Console.ReadLine();
-    if (Answer(gessPassword, password)==true) 
+    if (gessPassword ==password) 
     {
         Console.WriteLine(sicretMassage);
         break;
     }
-
     if (index==3) 
     {
-        Console.WriteLine("Ты проиграл :( попробуй еще раз!");
+        Console.WriteLine("РўС‹ РїСЂРѕРёРіСЂР°Р» :( РїРѕРїСЂРѕР±СѓР№ РµС‰Рµ СЂР°Р·!");
         break;
     }
-    
-
     Console.WriteLine(Help(index));
     Console.WriteLine();
     index++;
+}
+
+
+string Help(int i)
+{
+    if (i==1) 
+    {
+        return "РџРѕРґСЃРєР°Р·РєР°: Р­С‚Рѕ РіРѕРґ РјРѕРµРіРѕ СЂРѕР¶РґРµРЅРёСЏ";
+    }
+    
+    if (i==2)
+    {
+        return "РџРѕРґСЃРєР°Р·РєР°: РџРѕСЃР»РµРґРЅСЏСЏ С†РёС„СЂР° РїР°СЂРѕР»СЏ СЌС‚Рѕ 6";
+    }
+    return String.Empty;
 }
