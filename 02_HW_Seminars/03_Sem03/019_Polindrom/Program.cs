@@ -16,7 +16,5 @@ for (int i = num.Length-1; i >= 0; i--)
     char tempChar = num[i];
     newNum = newNum + tempChar;
 }
-
 if (num == newNum) Console.WriteLine("Число - полиндром!");
-
 else Console.WriteLine("Число - НЕ полиндром!");

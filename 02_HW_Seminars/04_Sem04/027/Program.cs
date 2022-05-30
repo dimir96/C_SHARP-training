@@ -29,7 +29,5 @@ int sum = 0;
 for (int i = 0; i < digitArray.Length; i++)
 {
     sum = sum + digitArray[i];
-    
 }
-
 Console.WriteLine($"Сумма всех цифр числа равна {sum}.");

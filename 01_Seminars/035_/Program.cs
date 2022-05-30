@@ -8,42 +8,21 @@
 // [10, 11, 12, 13, 14] -> 5
 
 int[] array = new int[123];
-
 int mainMaxBorder = 200;
-
 int searcMinBorder =10;
 int searcMaxBorder =99;
-
 FillArray(array,mainMaxBorder);
 WriteArray(array);
-
 int arrayLenth = 0;
 int length=0;
-for (int i = 0; i < array.Length; i++)
+for (int i = 0; i < array.Length; i++) // проверка чисел в границах для установки длинны массива
 {
-   if(array[i]>=searcMinBorder && array[i]<=searcMaxBorder) length =+ 1;
-}      
-
-int[] newArray = new int[length];
-
-int newArrayIndex = 0;
-
-for (int i = 0; i < array.Length; i++)
-{
-   if(array[i]>=searcMinBorder && array[i]<=searcMaxBorder)
+   if(array[i]>=searcMinBorder && array[i]<=searcMaxBorder) 
    {
-        newArray[newArrayIndex]=array[i];
-        newArrayIndex++;
+       length += 1;
    }
-}  
-
-Console.WriteLine();
-WriteArray(newArray);
-
-
-
-
-
+}      
+Console.WriteLine($"Количество элементов значения которых лежат в отрезке [10,99] - {length}.");
 
 
 
@@ -59,11 +38,10 @@ void WriteArray(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        Console.WriteLine($"{i} -- {array[i]}");
-        // Console.Write(array[i]+" ");
+        Console.Write(array[i] + ", ");
         
-
     }  
+    Console.WriteLine();
 }
 
 

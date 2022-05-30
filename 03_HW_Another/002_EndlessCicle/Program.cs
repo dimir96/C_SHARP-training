@@ -21,7 +21,6 @@ string help = "help";
 
 while (true)
 {   
-    start:
     Console.WriteLine();
     Console.Write("Введите команду: ");
     command = Console.ReadLine();
@@ -30,38 +29,38 @@ while (true)
     {
         Console.Write("Установите имя пользователя: ");
         name = Console.ReadLine();
-        goto start;
     }
     if(command == setPassword)
     {
         Console.Write("Установите пароль: ");
         password = Console.ReadLine();
-        goto start;
+       
     }
       if(command == showName)
     {
         if (password == String.Empty) 
         {
             Console.WriteLine("Ошибка! Сначала установите пароль.");
-            goto start;
+            continue;
         }
+        CheckPassword:
         Console.Write("Введите пароль: ");
         string tempPassword = Console.ReadLine();
         if (tempPassword == password)
         {
            Console.WriteLine(name);
-           goto start; 
         }
+        
+        if (tempPassword != password)   
+        {
+            Console.WriteLine("Ошибка! Неправильный пароль.");  
+            goto CheckPassword;
+        } 
         if (name == String.Empty) 
         {
             Console.WriteLine("Сначала установите  имя пользователя.");
-            goto start;
+            continue;
         }
-        else   
-        {
-            Console.WriteLine("Ошибка! Неправильный пароль.");  
-            goto start;
-        }  
     }
     if (command == help) 
     {
@@ -70,7 +69,5 @@ while (true)
         Console.WriteLine("show name - показывает имя пользователя после ввода пароля.");
         Console.WriteLine("help - выводит список всех команд.");
         Console.WriteLine("exit - заканчивает программу.");
-        goto start;
     }
-    else Console.WriteLine("Ошибка! Такой команды не существует. Введите help чтобы увидеть весь список команд");
 }

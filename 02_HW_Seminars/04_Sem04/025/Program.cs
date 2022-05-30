@@ -10,7 +10,6 @@ int GetNumber (string lable)
 }
 int pointA = GetNumber("A");
 int pointB = GetNumber("B");
-
 double CustomPower(int mainNumber, int powNumber)
 {
     double result = 1;
@@ -20,6 +19,5 @@ double CustomPower(int mainNumber, int powNumber)
     }
     return result;
 }
-
 double result = CustomPower(pointA, pointB);
 Console.WriteLine($"Число {pointA} в степени {pointB} равно {result}");
